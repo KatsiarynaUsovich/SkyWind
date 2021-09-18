@@ -9,4 +9,5 @@
    - добавляем подпункты в Test_making.txt в ветке feature/update-txt-files
    - мержим feature/update-txt-files ветку в master
    - добавляем подпункты в Test_making.txt в ветке master
-   - 	
+   - добавляем подпункты в Test_making.txt в ветке feature/update-txt-files	
+   - добавляем подпункты в Test_making.txt в ветке master и резолвим возникший конфликт
