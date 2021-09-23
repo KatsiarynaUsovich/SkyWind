@@ -3,11 +3,7 @@
 
 2. Создаем локальный репозиторий и производим начальную настройку для работы в Git
    а также производим основные базовые операции:
-   - создаем текстовый файл Test_making.txt
-   - создаем ветку development на основе коммита файла
-   - создаем ветку feature/update-txt-files на основе ветки master
-   - добавляем подпункты в Test_making.txt в ветке feature/update-txt-files
-   - мержим feature/update-txt-files ветку в master
-   - добавляем подпункты в Test_making.txt в ветке master
-   - добавляем подпункты в Test_making.txt в ветке feature/update-txt-files	
-   - добавляем подпункты в Test_making.txt в ветке master и резолвим возникший конфликт
+   
+3. Экспортируем каталог с проектом в Github
+
+4. Создаем страничку index.html
