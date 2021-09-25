@@ -37,9 +37,9 @@ body {
   <!-- Footer Section -->
 
 	
-	
+		
 <section class="footer_banner" id="contact">
-  <div class="button" onClick="enable_states()">Spin btn anim</div>
+  <div class="button" onClick="enable_music">Test button</div>
   </section>
 	
   <!-- Bottom Bar Section -->
@@ -87,11 +87,14 @@ body {
 				<div class="spin" id = "spin_id"><img id = "spin_btn" src="images/spin_bg_normal.png" width="184" onmouseout="this.src='images/spin_bg_normal.png'" onmouseover="this.src='images/spin_bg_hover.png'" onClick="javascript:spin_btn.src='images/spin_bg_click.png'"/></div>
 	
 	<audio id="clickSound"><source src="sound/Button_Click.wav" type="audio/wav"></audio>
+	<audio id="bgSound"><source src="sound/Loop_64bit.wav" type="audio/wav"></audio>
 	
 		
 	
 			
 <script>
+	
+	
 	
 	var spin_click = document.getElementById('spin_btn');
 	var auto_click = document.getElementById('auto_btn');
@@ -101,6 +104,7 @@ body {
 	var info_click = document.getElementById('info_btn');
 	
 	var click_audio = document.getElementById('clickSound');
+	var bg_audio = document.getElementById('bgSound');
 	
 	spin_click.addEventListener('click', funPlay, false);
 	auto_click.addEventListener('click', funPlay, false);
@@ -139,25 +143,9 @@ body {
 				
 	}
 	
-	function enable_states() {
+	function enable_music() {
 		
-		var i = 1222;
-		var y = 0;
-		let id = setInterval(frame, 20);
-		
-		function frame() {
-		if (i <= 1324 && y==0)
-			  { document.getElementById("spin_id").style.left = i + 'px';
-				i = i + 2;  
-			  }
-			else
-				{y = 1;
-			if (i >= 1222)
-			  {  document.getElementById("spin_id").style.left = i + 'px';
-				i = i - 2;  }}
-			
-			
-		}
+	bg_audio.play();
 		
 	}
 	
