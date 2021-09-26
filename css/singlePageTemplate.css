@@ -24,7 +24,7 @@ label {
 
 
 
-.bottom_btns{
+.inform_elements{
 	position: absolute;
 	left:121px;
 	top:582px;
@@ -34,15 +34,23 @@ label {
 
 .plus{
 	position: absolute;
-	left: 238px;
-	top:9px;
+	left: 358px;
+	top:591px;
 }
 
 .minus{
 	position: absolute;
-	left: 69px;
-	top:9px;
+	left: 192px;
+	top:591px;
 }
+
+.sound_ctrl{
+	position: absolute;
+	top:8px;
+	left: 80px;
+	color: darkblue;
+}
+
 
 .goodluck{
 	position: absolute;
@@ -102,7 +110,7 @@ input[type="checkbox"]:checked + span {
 	position: absolute;
     left: 1098px;
     top: 598px;
-	transition: all 3s;
+	transition: all 1s;
  }
 
 .list_select:hover .list_content {bottom: 100%; top: -210px!important; opacity: 1;} 
@@ -137,14 +145,39 @@ input[type="checkbox"]:checked + span {
 	font-weight: bold;
 	letter-spacing: 2px;
 	border: 3px solid #FFFFFF;
-	color: #FFFFFF;
+	color: #ffd100;
+	text-shadow: .07em .10em #710008;
 	transition: all 0.3s linear;
 }
-.button:hover {
-	background-color: #FEFEFE;
-	color: #C4C4C4;
-	cursor: pointer;
+
+.total_bet {
+	width: 200px;
+	position: absolute;
+	left: 76px;
+	top: 27px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 0px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	color: #ffd100;
+	text-shadow: .07em .10em #710008;
 }
+
+.coin {
+	width: 200px;
+	position: absolute;
+	left: 247px;
+	top: 27px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 0px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	color: #ffd100;
+	text-shadow: .07em .10em #710008;
+}
+
 
 .bottom_bar {
 	margin-top: 295px;

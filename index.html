@@ -73,11 +73,20 @@ body {
 			<!-- Info button Section -->
 				
 			
-			<div class="bottom_btns"><img id = "info_btn" src="images/btn-info-normal.png"  onmouseout="this.src='images/btn-info-normal.png'" width="64" onmouseover="this.src='images/btn-info-hover.png'" onClick="javascript:info_btn.src='images/btn-info-click.png'"/>
+			<div class="inform_elements"><img id = "info_btn" src="images/btn-info-normal.png"  onmouseout="this.src='images/btn-info-normal.png'" width="64" onmouseover="this.src='images/btn-info-hover.png'" onClick="javascript:info_btn.src='images/btn-info-click.png'"/>
 			
-			<div class="minus"><img id = "minus_btn" src="images/minus_normal.png" width="45" onmouseout="this.src='images/minus_normal.png'" onmouseover="this.src='images/minus_hover.png'" onClick="javascript:minus_btn.src='images/minus_click.png'"/></div>
- 								
-			<div class="plus"><img id = "plus_btn" src="images/plus_normal.png" width="45" onmouseout="this.src='images/plus_normal.png'" onmouseover="this.src='images/plus_hover.png'" onClick="javascript:plus_btn.src='images/plus_click.png'"/></div></div>
+							
+				
+			 <div class="total_bet">$0.15</div>	
+				<div class="coin">$0.01</div>	
+						
+			</div>
+	
+	<div class="minus"><img id = "minus_btn" src="images/minus_normal.png" width="45" onmouseout="this.src='images/minus_normal.png'" onmouseover="this.src='images/minus_hover.png'" onClick="javascript:minus_btn.src='images/minus_click.png'"/></div>
+	
+	<div class="plus"><img id = "plus_btn" src="images/plus_normal.png" width="45" onmouseout="this.src='images/plus_normal.png'" onmouseover="this.src='images/plus_hover.png'" onClick="javascript:plus_btn.src='images/plus_click.png'"/></div>
+	
+	
 	
 				
 			
@@ -91,7 +100,7 @@ body {
 	            
 	
 	<audio id="clickSound"><source src="sound/Button_Click.wav" type="audio/wav"></audio>
-	<audio id="bgSound"><source src="sound/Loop_64bit.wav" type="audio/wav"></audio>
+	<div class="sound_ctrl"><audio  controls id="bgSound" loop><source src="sound/bg_music.wav" type="audio/wav"></audio></div>
 	
 	
 		
@@ -232,6 +241,32 @@ body {
 		document.getElementById("info_btn").src = 'images/btn-info-dis.png';
 		document.getElementById("auto_btn").src = 'images/btn_auto_dis.png';
 		document.getElementById("turbo_img").src = 'images/turbo_btn_on_dis.png';
+		
+		var max = 8;
+		var min = 3;
+		var interval = ((Math.random() * (max - min) + min) * 650);
+		
+		alert(interval);
+		document.getElementsByClassName('total_bet')[0].innerHTML = '$' + interval.toFixed(2);
+		document.getElementsByClassName('coin')[0].innerHTML = '$' + (interval.toFixed(2))/100;
+		
+		
+			let activ = setInterval(btnsNorm, interval);
+		
+			
+		function btnsNorm() {
+			
+		document.getElementById("spin_btn").src = 'images/spin_bg_normal.png';
+		document.getElementById("plus_btn").src = 'images/plus_normal.png';
+		document.getElementById("minus_btn").src = 'images/minus_normal.png';
+		document.getElementById("info_btn").src = 'images/btn-info-normal.png';
+		document.getElementById("auto_btn").src = 'images/btn_auto_normal.png';
+		document.getElementById("turbo_img").src = 'images/turbo_btn_on_norm.png';
+			    	
+			
+		}
+		
+		
 				
 	}
 	
