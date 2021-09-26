@@ -57,12 +57,25 @@ label {
 	top: 524px;
 }
 
+.spin_image{
+	position: absolute;
+	left: 1264px;
+	top: 574px;
+	transition: all 1s ease-in-out;
+}
+
+.spin_image:hover {
+	transform: rotate(-360deg);
+}
+
 
 .turbo{
 position: absolute;	
 left: 1001px;
 top: 593px;
 }
+
+input[type="checkbox"] {visibility: hidden;}
 
 input[type="checkbox"] + span {
 	position: absolute;
@@ -73,10 +86,11 @@ input[type="checkbox"] + span {
 	background: url("../images/turbo_box_green.png") no-repeat;
 }
 
-
 input[type="checkbox"]:checked + span {
 	background: url("../images/turbo_box_red_.png") no-repeat;
 }
+
+
 
 .list_select{
 	position: absolute;
@@ -87,20 +101,21 @@ input[type="checkbox"]:checked + span {
 .list_bg{
 	position: absolute;
     left: 1098px;
-    top: 424px;
+    top: 598px;
+	transition: all 3s;
  }
 
-
-.list_select:hover .list_content {visibility: visible; bottom: 100%;} 
-
+.list_select:hover .list_content {bottom: 100%; top: -210px!important; opacity: 1;} 
 
 .list_content{
 	visibility: hidden;
 	position:relative;
 	left:22px;
-	top: -210px!important;
+	top: -65px;
 	bottom: 100%;	
-	list-style-type: none
+	list-style-type: none;
+	opacity: 0;
+	transition: top .25s, opacity 2s;
 }
 
 
