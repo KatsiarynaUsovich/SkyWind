@@ -39,8 +39,9 @@ body {
 	
 		
 <section class="footer_banner" id="contact">
-  <div class="button" onClick="enable_music">Test button</div>
+  <div class="button" onClick="enable_music()">Start music</div>
   </section>
+	
 	
   <!-- Bottom Bar Section -->
 	 	
@@ -65,7 +66,7 @@ body {
 			<li><a href="#"><img src="images/list_10.png" name = "list_10" width="88" onmouseout="this.src='images/list_10.png'" onmouseover="this.src='images/list_10_hov.png'" onClick="javascript:list_10.src='images/list_10_pres.png'"> </a></li>
 			<li><a href="#"><img src="images/list_5.png" name = "list_5" width="78" onmouseout="this.src='images/list_5.png'" onmouseover="this.src='images/list_5_hov.png'" onClick="javascript:list_5.src='images/list_5_pres.png'"></a></li></div></div></div>
 	
-	<div class="button" id="new" onClick="disable_states()">Disable state for btns turbo, auto, spin,+,-,info </div>
+
 		<div class="bottom_bar"><img src="images/bg-bottom-bar-new.png" width="1428" height="110" alt=""/>
 	<div class="goodluck"><img id = "good_luck" src="images/good_luck.png" width="400" onmouseout="this.src='images/good_luck.png'" onmouseover="this.src='images/good_numbers.png'"/> </div></div>
 				
@@ -111,7 +112,7 @@ body {
 		var i = 1222;
 		var y = 0;
 	 
-	
+	   
 	
 		let id = setInterval(frame, 20);
 	    
@@ -137,7 +138,7 @@ body {
 	var plus_click = document.getElementById('plus_btn');
 	var minus_click = document.getElementById('minus_btn');
 	var info_click = document.getElementById('info_btn');
-	
+		
 	var click_audio = document.getElementById('clickSound');
 	var bg_audio = document.getElementById('bgSound');
 	
@@ -147,6 +148,7 @@ body {
 	plus_click.addEventListener('click', funPlay, false);
 	minus_click.addEventListener('click', funPlay, false);
 	info_click.addEventListener('click', funPlay, false);
+	b
 	
 	 function funPlay(){click_audio.play();}
 	
@@ -272,7 +274,18 @@ body {
 	
 	function enable_music() {
 		
+		
 	bg_audio.play();
+		document.getElementsByClassName('button')[0].style.opacity = "0";
+		document.getElementsByClassName('sound_ctrl')[0].style.opacity = "1";
+		
+		let btn = setInterval(btn_sound, 3000);
+		function btn_sound() {
+			document.getElementsByClassName('button')[0].style.visibility = "hidden";
+		}
+		
+		
+			
 		
 	}
 	
