@@ -298,7 +298,7 @@ body {
 			
 		for (count_min=0; count_min<3; count_min++)
 			{
-			if (num < diap_min)
+			if (num < diap_min && num > 0.15)
 				{
 					if (num <= d2_min)
 						{num = num - (diap_min/20);
@@ -312,6 +312,7 @@ body {
 							 if (dec==1)
 								 dec = 2;
 							 if (dec==0)
+								 if (count_min!=2)
 								 dec = 1;
 							 return; }
 							 
