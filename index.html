@@ -434,11 +434,12 @@ body {
 		
 		document.getElementById('spin_inside').style.visibility = "hidden";
 		document.getElementById('spin_st').style.visibility = "visible";
+		document.getElementsByClassName('list_content')[0].style.visibility = "hidden";
 		
 		var spinMouseOut = document.getElementById("spin_btn").onmouseout;
 		var spinMouseOver = document.getElementById("spin_btn").onmouseover;
 		var spinMouseClick = document.getElementById("spin_btn").click;
-		
+				
 		var autoMouseOut = document.getElementById("auto_btn").onmouseout; 
 		var autoMouseOver = document.getElementById("auto_btn").onmouseover; 
 				
@@ -490,6 +491,7 @@ body {
 			
 			document.getElementById('spin_inside').style.visibility = "visible";
 		    document.getElementById('spin_st').style.visibility = "hidden";
+			document.getElementsByClassName('list_content')[0].style.visibility = "visible";
 			
 					  	
 			
