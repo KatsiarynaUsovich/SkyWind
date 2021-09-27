@@ -68,14 +68,17 @@ label {
 
 .spin_image{
 	position: absolute;
-	left: 1264px;
-	top: 574px;
+	left: 42px;
+	top: 46px;
 	transition: all 1s ease-in-out;
 }
 
-.spin_image:hover {
-	transform: rotate(-360deg);
+#spin_stop {
+	position: absolute;
+	left: 52px;
+	top: 49px;
 }
+
 
 
 .turbo{
@@ -101,31 +104,37 @@ input[type="checkbox"]:checked + span {
 
 
 
+
+
 .list_select{
 	position: absolute;
 	left: 1095px;
 	top: 585px;
 }
 
+
 .list_bg{
 	position: absolute;
     left: 1098px;
-    top: 598px;
-	transition: all 1s;
+    top: 424px;
+	transition: all 2s;
  }
 
-.list_select:hover .list_content {bottom: 100%; top: -210px!important; opacity: 1;} 
+.list_select:hover .list_content {bottom: 100%; visibility: visible; opacity: 1;} 
+
+
 
 .list_content{
 	visibility: hidden;
-	position:relative;
-	left:22px;
-	top: -65px;
+	position: relative;
+	left: 22px;
+	top: -210px!important;
 	bottom: 100%;	
 	list-style-type: none;
 	opacity: 0;
-	transition: top .25s, opacity 2s;
+	transition: top 2s;
 }
+
 
 
 .button {
@@ -148,7 +157,7 @@ input[type="checkbox"]:checked + span {
 	border: 3px solid #FFFFFF;
 	color: #ffffff;
 	text-shadow: .07em .10em #710008;
-	transition: opacity 3s linear;
+	transition: opacity 2s linear;
 }
 
 
@@ -204,6 +213,4 @@ input[type="checkbox"]:checked + span {
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: 2px;
-}
-.list_select {
 }

@@ -39,7 +39,7 @@ body {
 	
 		
 <section class="footer_banner" id="contact">
-  <div class="button" onClick="enable_music()">Start music</div>
+  <div class="button" id = "btn_en" onClick="enable_music()">Start music</div>
   </section>
 	
 	
@@ -56,7 +56,7 @@ body {
 	
 	<div class="list_bg"><img src="images/list_bg.png" id = "list_app" width="227"></div>
 		<div class="list_select"> <img src="images/btn_auto_normal.png" id = "auto_btn" width="227"
-		onmouseout="autoNormal()" onmouseover="autoHover()" onClick="javascript:auto_btn.src='images/btn_auto_click.png'"/>
+		onmouseout="javascript:auto_btn.src='images/btn_auto_normal.png'" onmouseover="javascript:auto_btn.src='images/btn_auto_hov.png'" onClick="javascript:auto_btn.src='images/btn_auto_click.png'"/>
 		<div class = "list_content">
 			<div class = "list_event">
 			<li><a href="#"><img src="images/list_feature.png" name = "list_feature" width="180" onmouseout="this.src='images/list_feature.png'" onmouseover="this.src='images/list_feature_hov.png'" onClick="javascript:list_feature.src='images/list_feature_pres.png'"></a></li>
@@ -83,9 +83,9 @@ body {
 						
 			</div>
 	
-	<div class="minus"><img id = "minus_btn" src="images/minus_normal.png" width="45" onmouseout="this.src='images/minus_normal.png'" onmouseover="this.src='images/minus_hover.png'" onClick="javascript:minus_btn.src='images/minus_click.png'"/></div>
+	<div class="minus"><img id = "minus_btn" src="images/minus_normal.png" width="45" onmouseout="this.src='images/minus_normal.png'" onmouseover="this.src='images/minus_hover.png'" onClick="betMinus()"/></div>
 	
-	<div class="plus"><img id = "plus_btn" src="images/plus_normal.png" width="45" onmouseout="this.src='images/plus_normal.png'" onmouseover="this.src='images/plus_hover.png'" onClick="javascript:plus_btn.src='images/plus_click.png'"/></div>
+	<div class="plus"><img id = "plus_btn" src="images/plus_normal.png" width="45" onmouseout="this.src='images/plus_normal.png'" onmouseover="this.src='images/plus_hover.png'" onClick="betPlus()"/></div>
 	
 	
 	
@@ -94,9 +94,11 @@ body {
 	        
 	<!-- Spin button Section -->
 			
-				<div class="spin" id = "spin_id"><img id = "spin_btn" src="images/spin_bg_normal.png" width="184" onmouseout="this.src='images/spin_bg_normal.png'" onmouseover="this.src='images/spin_bg_hover.png'" onClick="disable_states()"/></div>
+				<div class="spin" id = "spin_id"><img id = "spin_btn" src="images/spin_bg_normal.png" width="184" onmouseout="this.src='images/spin_bg_normal.png'" onmouseover="this.src='images/spin_bg_hover.png'" onClick="disable_states()"/>
+	<div class="spin_image" id = "spin_rotate"><img id = "spin_inside" src="images/spin_sign_on.png" width="100"/></div>
+	<div class="spin_image" id = "spin_stop"><img id = "spin_st" src="images/stop_sign_dis.png" width="80"/></div></div>
 	
-	<div class="spin_image" id = "spin_rotate"><img id = "spin_id" src="images/spin_sign_on.png" width="100"/></div>
+	
 	
 	            
 	
@@ -109,25 +111,35 @@ body {
 			
 <script>
 	
-		var i = 1222;
-		var y = 0;
+		
 	 
-	   
+	    var max = 12;
+		var min = 3;
+	    var temp = 0;
+	    var dec = 2;
+		var interval = ((Math.random() * (max - min) + min) * 650);
+		
+	    document.getElementById('spin_st').style.visibility = "hidden";
+	    
 	
-		let id = setInterval(frame, 20);
+		let start_mov = setInterval(frame, interval);
+	    
 	    
 		
 		function frame() {
-		if (i <= 1324 && y==0)
-			  { document.getElementById("spin_id").style.left = i + 'px';
-				i = i + 2;  
-			  }
+		if (temp==0)
+			  { document.getElementById("spin_rotate").style.transform = "rotate(-360deg)";
+			  	temp = 1;  
+			   }
 			else
-				{y = 1;
-			if (i >= 1222)
-			  {  document.getElementById("spin_id").style.left = i + 'px';
-				i = i - 2;  }}
+				{temp = 0;
+			document.getElementById("spin_rotate").style.transform = "rotate(360deg)";
+				
+			 
+				}
 			
+			var interval = ((Math.random() * (max - min) + min) * 650);
+						
 			
 		}
 	
@@ -148,11 +160,185 @@ body {
 	plus_click.addEventListener('click', funPlay, false);
 	minus_click.addEventListener('click', funPlay, false);
 	info_click.addEventListener('click', funPlay, false);
-	b
+	
 	
 	 function funPlay(){click_audio.play();}
 	
 	
+	
+	function betPlus(){
+		
+		document.getElementById("plus_btn").src = 'images/plus_click.png';
+		
+		var count = 0;
+		var diap = 1.5;
+		var z = 0.01;
+		var d2 = 0.75;
+		var d3 = 0.9;
+		
+		var value = document.getElementsByClassName("total_bet")[0].textContent;
+		var num = parseFloat(value.slice(1));
+		
+		value = document.getElementsByClassName("coin")[0].textContent;
+		var coin = parseFloat(value.slice(1));
+		
+		Plus();
+		
+		if (num==60)
+			Plus();
+		
+		if (num==90)
+			Plus();
+		
+				
+		
+		document.getElementsByClassName('total_bet')[0].innerHTML = '$' + num.toFixed(2);
+		document.getElementsByClassName('coin')[0].innerHTML = '$' + coin.toFixed(dec);
+		
+		if (dec==0)
+		document.getElementsByClassName('coin')[0].innerHTML = '$' + Math.round(coin);
+		
+		
+		
+	
+		
+			
+				
+		function Plus() {
+		 
+			
+		if (num==150) 
+			{num = num * 2;
+			 coin = coin * 2;}
+			
+		for (count=0; count<3; count++)
+			{
+			if (num < diap)
+				{
+					if (num <= d2)
+						{num = num + (diap/10);
+						 coin = coin + z; 
+						 return; }
+						 
+					else
+						if (num > d3)
+							{num = num + 2 * (diap/10);
+							 if (count<2)
+							     coin = coin + (z * 3);
+							 else
+								 coin = coin + (z * 2);
+							 if (dec > 0)
+							 dec = dec - 1;
+							 return; }
+							 
+					    else {
+							num = num + 2 * (diap/10);
+							coin = coin + (z * 2);
+						    return; } 
+						
+				}
+		    else
+				{ diap = diap * 10;
+				  z = z * 10; 
+				  d2 = d2 * 10;
+				  d3 = d3 * 10;
+			
+				}
+		     }
+			}
+		
+		
+		
+	}
+	
+	
+	
+	
+	function betMinus(){
+		
+		document.getElementById("minus_btn").src = 'images/minus_click.png';
+		
+		var count_min = 0;
+		var diap_min = 3;
+		var z_min = 0.01;
+		var d2_min = 0.9;
+		var d3_min = 1.2;
+		
+		var value = document.getElementsByClassName("total_bet")[0].textContent;
+		var num = parseFloat(value.slice(1));
+		
+		value = document.getElementsByClassName("coin")[0].textContent;
+		var coin = parseFloat(value.slice(1));
+		
+		Minus();
+		
+		if (num==60)
+			Minus();
+		
+		if (num==90)
+			Minus();
+		
+				
+		
+		document.getElementsByClassName('total_bet')[0].innerHTML = '$' + num.toFixed(2);
+		document.getElementsByClassName('coin')[0].innerHTML = '$' + coin.toFixed(dec);
+		
+		if (dec==0)
+		document.getElementsByClassName('coin')[0].innerHTML = '$' + Math.round(coin);
+		
+		
+		
+	
+		
+			
+				
+		function Minus() {
+		 
+			
+			
+		for (count_min=0; count_min<3; count_min++)
+			{
+			if (num < diap_min)
+				{
+					if (num <= d2_min)
+						{num = num - (diap_min/20);
+						 coin = coin - z_min; 
+						  return; }
+						 
+					else
+						if (num > d3_min)
+							{num = num - 2 * (diap_min/20);
+							 coin = coin - (z_min * 2);
+							 if (dec==1)
+								 dec = 2;
+							 if (dec==0)
+								 dec = 1;
+							 return; }
+							 
+					    else {
+							num = num - 2 * (diap_min/20);
+							coin = coin - (z_min * 2);
+							return; } 
+						
+				}
+		    else
+				{ diap_min = diap_min * 10;
+				  z_min = z_min * 10; 
+				  d2_min = d2_min * 10;
+				  d3_min = d3_min * 10;
+			
+				}
+		     }
+			
+			if (num==300) 
+				
+			{num = num / 2;
+			 coin = coin / 2;}
+			}
+		
+		
+		
+	}
 	
 		function turboChange() {
 			var chbox;
@@ -163,10 +349,12 @@ body {
 			chbox = document.getElementById('turbo_box');
 					if (chbox.checked!=true) {
 					document.getElementsByClassName('turbo')[0].style.top = "608px";
+						
 						chbox.checked=true;
 			}
 			else {
 					document.getElementsByClassName('turbo')[0].style.top = "593px";
+				
 				       chbox.checked =false;
 			}
 		
@@ -174,28 +362,28 @@ body {
 		}
 	
 			
-		function autoHover() {
-						
-			document.getElementsByClassName('list_bg')[0].style.top = "424px";
+		function autoHover(event) {
+			
+					
+			var el = 0;
 			document.getElementById("auto_btn").src = 'images/btn_auto_hov.png';
 			var elements = document.getElementsByClassName('list_event');
+			for (el = 0; el < 6; el++)
+				elements[0].children[el].style.visibility = "hidden";
 			
 			document.getElementsByClassName('list_content')[0].style.top = "-210px";
 			document.getElementsByClassName('list_content')[0].style.opacity = "1";
 			document.getElementsByClassName('list_content')[0].style.bottom = "100%";
 			
+			el = 5 ;
 			
-										
-			var el = 0;
-		  
-			
-	        let id = setInterval(listHov, 25);
+	        let id = setInterval(listHov, 500);
 		
 		function listHov() {
 			
-		   if (el < 6) {
+		   if (el >= 0) {
 				   elements[0].children[el].style.visibility = "visible";
-				   el = el + 1;
+				   el = el - 1;
 			   }
 			    	
 			
@@ -207,7 +395,6 @@ body {
 	function autoNormal() {
 		
 		
-			document.getElementsByClassName('list_bg')[0].style.top = "598px";			
 			document.getElementById("auto_btn").src = 'images/btn_auto_normal.png';
 			var elements = document.getElementsByClassName('list_event');
 			
@@ -219,7 +406,7 @@ body {
 			var el = 0;
 		  
 			
-	        let id = setInterval(listNorm, 25);
+	        let id = setInterval(listNorm, 500);
 		
 		function listNorm() {
 			
@@ -244,27 +431,66 @@ body {
 		document.getElementById("auto_btn").src = 'images/btn_auto_dis.png';
 		document.getElementById("turbo_img").src = 'images/turbo_btn_on_dis.png';
 		
-		var max = 8;
+		document.getElementById('spin_inside').style.visibility = "hidden";
+		document.getElementById('spin_st').style.visibility = "visible";
+		
+		var spinMouseOut = document.getElementById("spin_btn").onmouseout;
+		var spinMouseOver = document.getElementById("spin_btn").onmouseover;
+		var spinMouseClick = document.getElementById("spin_btn").click;
+		
+		var autoMouseOut = document.getElementById("auto_btn").onmouseout; 
+		var autoMouseOver = document.getElementById("auto_btn").onmouseover; 
+				
+		var turboMouseOut = document.getElementById("turbo_img").onmouseout; 
+		var turboMouseOver = document.getElementById("turbo_img").onmouseover; 
+			
+					
+				
+		document.getElementById("spin_btn").onmouseout = null;
+		document.getElementById("spin_btn").onmouseover = null;
+		document.getElementById("spin_btn").click = null;
+		
+		document.getElementById("auto_btn").onmouseover = null;
+		document.getElementById("auto_btn").onmouseout = null;
+				
+		document.getElementById("turbo_img").onmouseout = null; 
+		document.getElementById("turbo_img").onmouseover = null; 
+				
+			
+		var max = 10;
 		var min = 3;
 		var interval = ((Math.random() * (max - min) + min) * 650);
 		
-		alert(interval);
-		document.getElementsByClassName('total_bet')[0].innerHTML = '$' + interval.toFixed(2);
-		document.getElementsByClassName('coin')[0].innerHTML = '$' + (interval.toFixed(2))/100;
-		
-		
+				
+				
 			let activ = setInterval(btnsNorm, interval);
 		
 			
 		function btnsNorm() {
-			
+		
+					
 		document.getElementById("spin_btn").src = 'images/spin_bg_normal.png';
 		document.getElementById("plus_btn").src = 'images/plus_normal.png';
 		document.getElementById("minus_btn").src = 'images/minus_normal.png';
 		document.getElementById("info_btn").src = 'images/btn-info-normal.png';
 		document.getElementById("auto_btn").src = 'images/btn_auto_normal.png';
 		document.getElementById("turbo_img").src = 'images/turbo_btn_on_norm.png';
-			    	
+		
+			clearInterval(activ);
+			document.getElementById("spin_btn").onmouseout = spinMouseOut;
+			document.getElementById("spin_btn").onmouseover = spinMouseOver;
+			document.getElementById("spin_btn").click = spinMouseClick;
+			
+			document.getElementById("auto_btn").onmouseover = autoMouseOver;
+		    document.getElementById("auto_btn").onmouseout = autoMouseOut;
+						
+			document.getElementById("turbo_img").onmouseout = turboMouseOut; 
+		    document.getElementById("turbo_img").onmouseover = turboMouseOver;
+			
+			document.getElementById('spin_inside').style.visibility = "visible";
+		    document.getElementById('spin_st').style.visibility = "hidden";
+			
+					  	
 			
 		}
 		
@@ -276,9 +502,12 @@ body {
 		
 		
 	bg_audio.play();
+		
 		document.getElementsByClassName('button')[0].style.opacity = "0";
 		document.getElementsByClassName('sound_ctrl')[0].style.opacity = "1";
 		
+		
+			
 		let btn = setInterval(btn_sound, 3000);
 		function btn_sound() {
 			document.getElementsByClassName('button')[0].style.visibility = "hidden";
