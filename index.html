@@ -393,11 +393,13 @@ body {
 	function disable_states() {
 		
 		if (document.getElementById("spin_id").click != null)
+			{
 		document.getElementById("spin_btn").src = 'images/spin_bg_click.png';
 		
 		document.getElementsByClassName("list_content")[0].style.filter = "brightness(0.5) contrast(1.75)";
 		
 		let spin_click = setTimeout(clicked, 20);
+			}
 		
 		function clicked() {
 			
@@ -431,12 +433,13 @@ body {
 		var max = 10;
 		var min = 3;
 		var interval = ((Math.random() * (max - min) + min) * 650);
+			
+			alert("dis" + spinMouseOver);
 		
 				
 				
 			let activ = setInterval(btnsNorm, interval);
-		
-			
+					
 		function btnsNorm() {
 		
 					
@@ -450,7 +453,7 @@ body {
 			document.getElementById("spin_id").onmouseout = spinMouseOut;
 			document.getElementById("spin_id").onmouseover = spinMouseOver;
 			document.getElementById("spin_id").click = spinMouseClick;
-			
+						
 			clearInterval(activ);	
 			document.getElementById('spin_inside').style.visibility = "visible";
 		    document.getElementById('spin_st').style.visibility = "hidden";
@@ -463,7 +466,9 @@ body {
 			document.getElementsByClassName("list_content")[0].style.pointerEvents = "auto";
 			document.getElementsByClassName("turbo")[0].style.pointerEvents = "auto";
 			
-			document.getElementsByClassName("list_content")[0].style.filter = "none";			  	
+			document.getElementsByClassName("list_content")[0].style.filter = "none";	
+			
+			alert("en" + spinMouseOver);
 		
 		}
 		
