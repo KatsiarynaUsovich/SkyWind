@@ -47,29 +47,35 @@ body {
 	 	
   <!-- Turbo Box Section -->
 
-	<label><input type="checkbox" value="1" id = "turbo_box"><span></span></label>
-<div class="turbo"><img id = "turbo_img" src="images/turbo_btn_on_norm.png" width="84" onmouseout="this.src='images/turbo_btn_on_norm.png'" onmouseover="this.src='images/turbo_btn_on_hov.png'"
-								onClick="turboChange()"/>
-	</div>
+	<input type="checkbox" value="0" id = "turbo_box"><span id = "turbo_bg"></span>
+<a class="turbo"><img id = "turbo_img" src="images/turbo_btn_on_norm.png" width="84" onmouseout="this.src='images/turbo_btn_on_norm.png'" onmouseover="this.src='images/turbo_btn_on_hov.png'" onClick="turboChange()"/>
+	</a>
+	
 	
 	<!-- List Select Section -->
 	
-	<div class="list_bg"><img src="images/list_bg.png" id = "list_app" width="227"></div>
-		<div class="list_select"> <img src="images/btn_auto_normal.png" id = "auto_btn" width="227"
-		onmouseout="javascript:auto_btn.src='images/btn_auto_normal.png'" onmouseover="javascript:auto_btn.src='images/btn_auto_hov.png'" onClick="javascript:auto_btn.src='images/btn_auto_click.png'"/>
-		<div class = "list_content">
-			<div class = "list_event">
-			<li><a href="#"><img src="images/list_feature.png" name = "list_feature" width="180" onmouseout="this.src='images/list_feature.png'" onmouseover="this.src='images/list_feature_hov.png'" onClick="javascript:list_feature.src='images/list_feature_pres.png'"></a></li>
-			<li><a href="#"><img src="images/list_25.png" name = "list_25" width="90" onmouseout="this.src='images/list_25.png'" onmouseover="this.src='images/list_25_hov.png'" onClick="javascript:list_25.src='images/list_25_pres.png'"> </a></li>
-			<li><a href="#"><img src="images/list_20.png" name = "list_20" width="90" onmouseout="this.src='images/list_20.png'" onmouseover="this.src='images/list_20_hov.png'" onClick="javascript:list_20.src='images/list_20_pres.png'"></a></li>
-			<li><a href="#"><img src="images/list_15.png" name = "list_15" width="90" onmouseout="this.src='images/list_15.png'" onmouseover="this.src='images/list_15_hov.png'" onClick="javascript:list_15.src='images/list_15_pres.png'"></a></li>
-			<li><a href="#"><img src="images/list_10.png" name = "list_10" width="88" onmouseout="this.src='images/list_10.png'" onmouseover="this.src='images/list_10_hov.png'" onClick="javascript:list_10.src='images/list_10_pres.png'"> </a></li>
-			<li><a href="#"><img src="images/list_5.png" name = "list_5" width="78" onmouseout="this.src='images/list_5.png'" onmouseover="this.src='images/list_5_hov.png'" onClick="javascript:list_5.src='images/list_5_pres.png'"></a></li></div></div></div>
-	
+		
 
 		<div class="bottom_bar"><img src="images/bg-bottom-bar-new.png" width="1428" height="110" alt=""/>
 	<div class="goodluck"><img id = "good_luck" src="images/good_luck.png" width="400" onmouseout="this.src='images/good_luck.png'" onmouseover="this.src='images/good_numbers.png'"/> </div></div>
-				
+	
+	<ul class="list_bg"><img src="images/list_bg.png" id = "list_app" width="227"></ul>
+					
+	<div class = "list_content" onmouseout="autoNorm()" onmouseover="autoHover()">
+			
+			<li><a><img src="images/list_feature.png" name = "list_feature" width="180" onmouseout="this.src='images/list_feature.png'" onmouseover="this.src='images/list_feature_hov.png'" onClick="javascript:list_feature.src='images/list_feature_pres.png'"></a></li>
+			<li><a><img src="images/list_25.png" name = "list_25" width="90" onmouseout="this.src='images/list_25.png'" onmouseover="this.src='images/list_25_hov.png'" onClick="javascript:list_25.src='images/list_25_pres.png'"></a></li>
+			<li><a><img src="images/list_20.png" name = "list_20" width="90" onmouseout="this.src='images/list_20.png'" onmouseover="this.src='images/list_20_hov.png'" onClick="javascript:list_20.src='images/list_20_pres.png'"></a></li>
+			<li><a><img src="images/list_15.png" name = "list_15" width="90" onmouseout="this.src='images/list_15.png'" onmouseover="this.src='images/list_15_hov.png'" onClick="javascript:list_15.src='images/list_15_pres.png'"></a></li>
+			<li><a><img src="images/list_10.png" name = "list_10" width="88" onmouseout="this.src='images/list_10.png'" onmouseover="this.src='images/list_10_hov.png'" onClick="javascript:list_10.src='images/list_10_pres.png'"></a></li>
+			<li><a><img src="images/list_5.png" name = "list_5" width="78" onmouseout="this.src='images/list_5.png'" onmouseover="this.src='images/list_5_hov.png'" onClick="javascript:list_5.src='images/list_5_pres.png'"></a></li></div>
+	
+	<div class="list_select"> <img src="images/btn_auto_normal.png" id = "auto_btn" width="227"
+	onmouseout="autoNorm()" onmouseover="autoHover()" onClick="javascript:auto_btn.src='images/btn_auto_click.png'"/>
+	</div>
+	
+
+	
 			
 			<!-- Info button Section -->
 				
@@ -93,13 +99,9 @@ body {
 			
 	        
 	<!-- Spin button Section -->
-			
-				<div class="spin" id = "spin_id"><img id = "spin_btn" src="images/spin_bg_normal.png" width="184" onmouseout="this.src='images/spin_bg_normal.png'" onmouseover="this.src='images/spin_bg_hover.png'" onClick="disable_states()"/>
+	<div class="spin" id = "spin_id" onmouseout="spin_btn.src='images/spin_bg_normal.png'" onmouseover="spin_btn.src='images/spin_bg_hover.png'" onClick="disable_states()"><img id = "spin_btn" src="images/spin_bg_normal.png" width="184"/>
 	<div class="spin_image" id = "spin_rotate"><img id = "spin_inside" src="images/spin_sign_on.png" width="100"/></div>
 	<div class="spin_image" id = "spin_stop"><img id = "spin_st" src="images/stop_sign_dis.png" width="80"/></div></div>
-	
-	
-	
 	            
 	
 	<audio id="clickSound"><source src="sound/Button_Click.wav" type="audio/wav"></audio>
@@ -117,6 +119,7 @@ body {
 		var min = 3;
 	    var temp = 0;
 	    var dec = 2;
+	   	var el = 0;
 		var interval = ((Math.random() * (max - min) + min) * 650);
 		
 	    document.getElementById('spin_st').style.visibility = "hidden";
@@ -144,7 +147,7 @@ body {
 		}
 	
 	
-	var spin_click = document.getElementById('spin_btn');
+	var spin_click = document.getElementById('spin_id');
 	var auto_click = document.getElementById('auto_btn');
 	var turbo_click = document.getElementById('turbo_img');
 	var plus_click = document.getElementById('plus_btn');
@@ -156,7 +159,7 @@ body {
 	
 	spin_click.addEventListener('click', funPlay, false);
 	auto_click.addEventListener('click', funPlay, false);
-	turbo_click.addEventListener('click', turboChange(), false);
+	turbo_click.addEventListener('click', funPlay, false);
 	plus_click.addEventListener('click', funPlay, false);
 	minus_click.addEventListener('click', funPlay, false);
 	info_click.addEventListener('click', funPlay, false);
@@ -346,6 +349,7 @@ body {
 			
 			click_audio.play();
 			document.getElementById("turbo_img").src = 'images/turbo_btn_on_click.png';
+							
 			
 			chbox = document.getElementById('turbo_box');
 					if (chbox.checked!=true) {
@@ -363,68 +367,41 @@ body {
 		}
 	
 			
-		function autoHover(event) {
-			
+		function autoHover() {
+						
+		document.getElementById("auto_btn").src = "images/btn_auto_hov.png";
+		document.getElementsByClassName("list_bg")[0].style.top = "424px";
+		document.getElementsByClassName("list_bg")[0].style.maxHeight = "200px";
+		document.getElementsByClassName("list_content")[0].style.top = "-240px";
+		document.getElementsByClassName("list_content")[0].style.maxHeight = "200px";
 					
-			var el = 0;
-			document.getElementById("auto_btn").src = 'images/btn_auto_hov.png';
-			var elements = document.getElementsByClassName('list_event');
-			for (el = 0; el < 6; el++)
-				elements[0].children[el].style.visibility = "hidden";
-			
-			document.getElementsByClassName('list_content')[0].style.top = "-210px";
-			document.getElementsByClassName('list_content')[0].style.opacity = "1";
-			document.getElementsByClassName('list_content')[0].style.bottom = "100%";
-			
-			el = 5 ;
-			
-	        let id = setInterval(listHov, 500);
-		
-		function listHov() {
-			
-		   if (el >= 0) {
-				   elements[0].children[el].style.visibility = "visible";
-				   el = el - 1;
-			   }
-			    	
-			
-		}
-			
+				
 		}
 	
-	
-	function autoNormal() {
+	function autoNorm() {
+					
+		document.getElementById("auto_btn").src = "images/btn_auto_normal.png";
+		document.getElementsByClassName("list_bg")[0].style.top = "584px";
+		document.getElementsByClassName("list_bg")[0].style.maxHeight = "0px";
+		document.getElementsByClassName("list_content")[0].style.top = "-80px";
+		document.getElementsByClassName("list_content")[0].style.maxHeight = "0px";
 		
-		
-			document.getElementById("auto_btn").src = 'images/btn_auto_normal.png';
-			var elements = document.getElementsByClassName('list_event');
-			
-			document.getElementsByClassName('list_content')[0].style.top = "-65px";
-			document.getElementsByClassName('list_content')[0].style.opacity = "0";
-			
-			
-										
-			var el = 0;
-		  
-			
-	        let id = setInterval(listNorm, 500);
-		
-		function listNorm() {
-			
-		   if (el < 6) {
-				   elements[0].children[el].style.visibility = "hidden";
-				   el = el + 1;
-			   }
-			    	
 			
 		}
 			
-		}
-	
+			
 	
 	
 	
 	function disable_states() {
+		
+		document.getElementById("spin_btn").src = 'images/spin_bg_click.png';
+		
+		let spin_click = setTimeout(clicked, 20);
+		
+		function clicked() {
+			
+			
 		document.getElementById("spin_btn").src = 'images/spin_bg_dis.png';
 		document.getElementById("plus_btn").src = 'images/plus_disable.png';
 		document.getElementById("minus_btn").src = 'images/minus_disable.png';
@@ -434,30 +411,25 @@ body {
 		
 		document.getElementById('spin_inside').style.visibility = "hidden";
 		document.getElementById('spin_st').style.visibility = "visible";
-		document.getElementsByClassName('list_content')[0].style.visibility = "hidden";
 		
-		var spinMouseOut = document.getElementById("spin_btn").onmouseout;
-		var spinMouseOver = document.getElementById("spin_btn").onmouseover;
-		var spinMouseClick = document.getElementById("spin_btn").click;
-				
-		var autoMouseOut = document.getElementById("auto_btn").onmouseout; 
-		var autoMouseOver = document.getElementById("auto_btn").onmouseover; 
-				
-		var turboMouseOut = document.getElementById("turbo_img").onmouseout; 
-		var turboMouseOver = document.getElementById("turbo_img").onmouseover; 
+		document.getElementsByClassName("minus")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("plus")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("inform_elements")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("spin")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("list_select")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("turbo")[0].style.pointerEvents = "none";
 			
-					
+		var spinMouseOut = document.getElementById("spin_id").onmouseout;
+		var spinMouseOver = document.getElementById("spin_id").onmouseover;
+		var spinMouseClick = document.getElementById("spin_id").click;
+			
 				
-		document.getElementById("spin_btn").onmouseout = null;
-		document.getElementById("spin_btn").onmouseover = null;
-		document.getElementById("spin_btn").click = null;
+				
+		document.getElementById("spin_id").onmouseout = null;
+		document.getElementById("spin_id").onmouseover = null;
+		document.getElementById("spin_id").click = null;
 		
-		document.getElementById("auto_btn").onmouseover = null;
-		document.getElementById("auto_btn").onmouseout = null;
-				
-		document.getElementById("turbo_img").onmouseout = null; 
-		document.getElementById("turbo_img").onmouseover = null; 
-				
+			
 			
 		var max = 10;
 		var min = 3;
@@ -479,27 +451,29 @@ body {
 		document.getElementById("turbo_img").src = 'images/turbo_btn_on_norm.png';
 		
 			clearInterval(activ);
-			document.getElementById("spin_btn").onmouseout = spinMouseOut;
-			document.getElementById("spin_btn").onmouseover = spinMouseOver;
-			document.getElementById("spin_btn").click = spinMouseClick;
+			document.getElementById("spin_id").onmouseout = spinMouseOut;
+			document.getElementById("spin_id").onmouseover = spinMouseOver;
+			document.getElementById("spin_id").click = spinMouseClick;
 			
-			document.getElementById("auto_btn").onmouseover = autoMouseOver;
-		    document.getElementById("auto_btn").onmouseout = autoMouseOut;
-						
-			document.getElementById("turbo_img").onmouseout = turboMouseOut; 
-		    document.getElementById("turbo_img").onmouseover = turboMouseOver;
-			
+				
 			document.getElementById('spin_inside').style.visibility = "visible";
 		    document.getElementById('spin_st').style.visibility = "hidden";
-			document.getElementsByClassName('list_content')[0].style.visibility = "visible";
 			
-					  	
+			document.getElementsByClassName("minus")[0].style.pointerEvents = "auto";
+		    document.getElementsByClassName("plus")[0].style.pointerEvents = "auto";
+		    document.getElementsByClassName("inform_elements")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("spin")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("list_select")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("turbo")[0].style.pointerEvents = "auto";
+						
+				  	
 			
 		}
 		
+	  }
 		
-				
 	}
+		
 	
 	function enable_music() {
 		

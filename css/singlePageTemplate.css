@@ -73,6 +73,13 @@ label {
 	transition: all 1s ease-in-out;
 }
 
+.spin_im{
+	position: absolute;
+	left: 1265px;
+	top: 570px;
+	transition: all 1s ease-in-out;
+}
+
 #spin_stop {
 	position: absolute;
 	left: 52px;
@@ -81,10 +88,13 @@ label {
 
 
 
+
+
 .turbo{
 position: absolute;	
 left: 1001px;
 top: 593px;
+z-index: 1;
 }
 
 input[type="checkbox"] {visibility: hidden;}
@@ -94,17 +104,13 @@ input[type="checkbox"] + span {
 	margin-top: 585px;
 	margin-left: 996px;
 	left: 0; top: 0;
-	width: 100%; height: 20%;
+	width: 6%; height: 27%;
 	background: url("../images/turbo_box_green.png") no-repeat;
 }
 
 input[type="checkbox"]:checked + span {
 	background: url("../images/turbo_box_red_.png") no-repeat;
 }
-
-
-
-
 
 .list_select{
 	position: absolute;
@@ -113,29 +119,25 @@ input[type="checkbox"]:checked + span {
 }
 
 
-.list_bg{
+.list_bg {
 	position: absolute;
-    left: 1098px;
-    top: 424px;
+	left: 1098px;
+    top: 584px;
+	padding: 0px;
+	max-height: 0px;
+	overflow: hidden;
 	transition: all 2s;
  }
 
-.list_select:hover .list_content {bottom: 100%; visibility: visible; opacity: 1;} 
-
-
-
 .list_content{
-	visibility: hidden;
 	position: relative;
-	left: 22px;
-	top: -210px!important;
-	bottom: 100%;	
+	left: 1116px;
+	top: -80px;
 	list-style-type: none;
-	opacity: 0;
-	transition: top 2s;
+	max-height: 0px;
+	overflow: hidden;
+	transition: all 2s;
 }
-
-
 
 .button {
 	opacity: 1;
