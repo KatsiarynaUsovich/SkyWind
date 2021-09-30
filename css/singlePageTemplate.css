@@ -131,9 +131,9 @@ input[type="checkbox"]:checked + span {
  }
 
 .list_content{
-	position: relative;
+	position: absolute;
 	left: 1116px;
-	top: -80px;
+	top: 611px;
 	list-style-type: none;
 	max-height: 0px;
 	overflow: hidden;
