@@ -447,12 +447,11 @@ body {
 		document.getElementById("auto_btn").src = 'images/btn_auto_normal.png';
 		document.getElementById("turbo_img").src = 'images/turbo_btn_on_norm.png';
 		
-			clearInterval(activ);
 			document.getElementById("spin_id").onmouseout = spinMouseOut;
 			document.getElementById("spin_id").onmouseover = spinMouseOver;
 			document.getElementById("spin_id").click = spinMouseClick;
 			
-				
+			clearInterval(activ);	
 			document.getElementById('spin_inside').style.visibility = "visible";
 		    document.getElementById('spin_st').style.visibility = "hidden";
 			
