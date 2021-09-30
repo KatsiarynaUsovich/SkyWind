@@ -64,6 +64,7 @@ label {
 	position: absolute;
 	left: 1222px;
 	top: 524px;
+	z-index: 1;
 }
 
 .spin_image{
@@ -126,7 +127,7 @@ input[type="checkbox"]:checked + span {
 	padding: 0px;
 	max-height: 0px;
 	overflow: hidden;
-	transition: all 2s;
+	transition: all 1.4s;
  }
 
 .list_content{
@@ -136,7 +137,8 @@ input[type="checkbox"]:checked + span {
 	list-style-type: none;
 	max-height: 0px;
 	overflow: hidden;
-	transition: all 2s;
+	filter: none;
+	transition: all 1.4s, filter 0.1s;
 }
 
 .button {
