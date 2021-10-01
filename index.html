@@ -170,11 +170,13 @@ body {
 	minus_click.addEventListener('click', funPlay, false);
 	info_click.addEventListener('click', funPlay, false);
 	
+
 	
 	 function funPlay(){click_audio.play();}
 	
 	
 	function listComplete() {
+	
 		
 	    document.getElementsByClassName("list_content")[0].style.pointerEvents = "none";
 		
@@ -198,9 +200,81 @@ body {
 		document.getElementById("spin_count").style.opacity = "1";
 		document.getElementsByClassName("list_sign")[0].style.opacity = "1";
 		document.getElementsByClassName("list_select")[0].style.visibility = "hidden";
+		
+		var number_from_list = ((Math.random() * (25 - 5) + 5));
+		
+		for (i=0; i<5; i++)
+			{
+		
+		let stop_click = setTimeout(disableList, 2000);
+		
+        	function disableList() {
+		
+		
+							
+		document.getElementById("spin_btn").src = 'images/spin_bg_dis.png';
+		document.getElementById("plus_btn").src = 'images/plus_disable.png';
+		document.getElementById("minus_btn").src = 'images/minus_disable.png';
+		document.getElementById("info_btn").src = 'images/btn-info-dis.png';
+		document.getElementById("turbo_img").src = 'images/turbo_btn_on_dis.png';
+						
+		document.getElementById('spin_inside').style.visibility = "hidden";
+		document.getElementById('spin_st').style.visibility = "visible";
+		
+		document.getElementsByClassName("minus")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("plus")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("inform_elements")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("list_select")[0].style.pointerEvents = "none";		
+		document.getElementsByClassName("list_content")[0].style.pointerEvents = "none";		
+		document.getElementsByClassName("turbo")[0].style.pointerEvents = "none";
+		document.getElementsByClassName("spin")[0].style.pointerEvents = "none";
+		
+					
+		var spinMouseOut = document.getElementById("spin_id").onmouseout;
+		var spinMouseOver = document.getElementById("spin_id").onmouseover;
+		var spinMouseClick = document.getElementById("spin_id").onmousedown;
+		var spinMouseUp = document.getElementById("spin_id").onmouseup;
 			
 		
-		disableList();
+	    let spin_click = setTimeout(btnsNormList, 2000);
+		
+						
+		function btnsNormList() {
+		
+	
+		document.getElementById("spin_btn").src = 'images/spin_bg_normal.png';
+		document.getElementById("plus_btn").src = 'images/plus_normal.png';
+		document.getElementById("minus_btn").src = 'images/minus_normal.png';
+		document.getElementById("info_btn").src = 'images/btn-info-normal.png';
+		document.getElementById("turbo_img").src = 'images/turbo_btn_on_norm.png';
+		
+		
+								
+		
+			document.getElementById('spin_inside').style.visibility = "visible";
+		    document.getElementById('spin_st').style.visibility = "hidden";
+			
+			document.getElementsByClassName("minus")[0].style.pointerEvents = "auto";
+		    document.getElementsByClassName("plus")[0].style.pointerEvents = "auto";
+		    document.getElementsByClassName("inform_elements")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("spin")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("list_select")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("list_content")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("turbo")[0].style.pointerEvents = "auto";
+			
+			document.getElementsByClassName("list_content")[0].style.filter = "none";	
+			
+			document.getElementById("spin_id").onmouseout = spinMouseOut;
+			
+					stopSpin();
+			
+			
+		}
+		
+
+	  }
+		
+		}
 
 	}
 	
@@ -632,81 +706,8 @@ body {
 			}	
 		
 		
-	}
-	
-	
-	function disableList() {
+	}	
 		
-		
-		let spin_click = setTimeout(clickedList, 20);
-				
-			
-		
-		function clickedList() {
-			
-		document.getElementById("spin_btn").src = 'images/spin_bg_dis.png';
-		document.getElementById("plus_btn").src = 'images/plus_disable.png';
-		document.getElementById("minus_btn").src = 'images/minus_disable.png';
-		document.getElementById("info_btn").src = 'images/btn-info-dis.png';
-		document.getElementById("turbo_img").src = 'images/turbo_btn_on_dis.png';
-						
-		document.getElementById('spin_inside').style.visibility = "hidden";
-		document.getElementById('spin_st').style.visibility = "visible";
-		
-		document.getElementsByClassName("minus")[0].style.pointerEvents = "none";
-		document.getElementsByClassName("plus")[0].style.pointerEvents = "none";
-		document.getElementsByClassName("inform_elements")[0].style.pointerEvents = "none";
-		document.getElementsByClassName("list_select")[0].style.pointerEvents = "none";		
-		document.getElementsByClassName("list_content")[0].style.pointerEvents = "none";		
-		document.getElementsByClassName("turbo")[0].style.pointerEvents = "none";
-		document.getElementsByClassName("spin")[0].style.pointerEvents = "none";
-		
-					
-		var spinMouseOut = document.getElementById("spin_id").onmouseout;
-		var spinMouseOver = document.getElementById("spin_id").onmouseover;
-		var spinMouseClick = document.getElementById("spin_id").onmousedown;
-		var spinMouseUp = document.getElementById("spin_id").onmouseup;
-			
-		
-	
-			
-
-	  }
-		
-		
-		
-	}
-	
-	
-						
-		function btnsNormList() {
-		
-	
-		document.getElementById("spin_btn").src = 'images/spin_bg_normal.png';
-		document.getElementById("plus_btn").src = 'images/plus_normal.png';
-		document.getElementById("minus_btn").src = 'images/minus_normal.png';
-		document.getElementById("info_btn").src = 'images/btn-info-normal.png';
-		document.getElementById("turbo_img").src = 'images/turbo_btn_on_norm.png';
-		
-		
-								
-		
-			document.getElementById('spin_inside').style.visibility = "visible";
-		    document.getElementById('spin_st').style.visibility = "hidden";
-			
-			document.getElementsByClassName("minus")[0].style.pointerEvents = "auto";
-		    document.getElementsByClassName("plus")[0].style.pointerEvents = "auto";
-		    document.getElementsByClassName("inform_elements")[0].style.pointerEvents = "auto";
-			document.getElementsByClassName("spin")[0].style.pointerEvents = "auto";
-			document.getElementsByClassName("list_select")[0].style.pointerEvents = "auto";
-			document.getElementsByClassName("list_content")[0].style.pointerEvents = "auto";
-			document.getElementsByClassName("turbo")[0].style.pointerEvents = "auto";
-			
-			document.getElementsByClassName("list_content")[0].style.filter = "none";	
-			
-			document.getElementById("spin_id").onmouseout = spinMouseOut;
-		}
-	
 	
 	</script>	
 	                          
