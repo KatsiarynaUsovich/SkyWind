@@ -192,6 +192,7 @@ body {
 		}
 		
 		document.getElementsByClassName("list_stop")[0].style.visibility = "visible";
+		document.getElementById("spin_count").style.opacity = "1";
 		document.getElementsByClassName("list_select")[0].style.visibility = "hidden";
 		
 		disableList();
@@ -201,10 +202,19 @@ body {
 	
 	function stopSpin(){
 		
+		document.getElementById("stop_btn").src = 'images/btn_auto_stop_click.png';
+		document.getElementById("spin_count").style.opacity = "0";
+		
+		let stop_click = setTimeout(stopClicked, 50);
+		
+		function stopClicked() {
+		
 		document.getElementsByClassName("list_select")[0].style.visibility = "visible";
 		document.getElementsByClassName("list_stop")[0].style.visibility = "hidden";
 		
 		btnsNormList();
+			
+		}
 		
 		
 	}
@@ -649,8 +659,9 @@ body {
 		var spinMouseOver = document.getElementById("spin_id").onmouseover;
 		var spinMouseClick = document.getElementById("spin_id").onmousedown;
 		var spinMouseUp = document.getElementById("spin_id").onmouseup;
+			
 		
-		document.getElementById("spin_id").onmouseout = null;
+	
 			
 
 	  }
