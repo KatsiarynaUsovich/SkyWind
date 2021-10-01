@@ -119,6 +119,18 @@ input[type="checkbox"]:checked + span {
 	top: 585px;
 }
 
+.list_stop{
+	position: absolute;
+	visibility: hidden;
+	left: 1095px;
+	top: 585px;
+}
+
+#spin_count {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
 
 .list_bg {
 	position: absolute;
