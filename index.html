@@ -78,6 +78,8 @@ body {
 	onmouseout="javascript:stop_btn.src='images/btn_auto_stop_norm.png'" onmouseover="javascript:stop_btn.src='images/btn_auto_stop_hov.png'" onmousedown="stopSpin()" onmouseup="javascript:stop_btn.src='images/btn_auto_stop_hov.png'"/><img src="images/spincount_bg.png" id = "spin_count" width="44"/>
 	</div>
 	
+	<div class="list_sign"> <img src="images/spincount_sign.png" id = "stop_sign" width="40"/></div>
+	
 	
 
 	
@@ -193,6 +195,7 @@ body {
 		
 		document.getElementsByClassName("list_stop")[0].style.visibility = "visible";
 		document.getElementById("spin_count").style.opacity = "1";
+		document.getElementsByClassName("list_sign")[0].style.opacity = "1";
 		document.getElementsByClassName("list_select")[0].style.visibility = "hidden";
 		
 		disableList();
@@ -203,6 +206,7 @@ body {
 	function stopSpin(){
 		
 		document.getElementById("spin_count").style.opacity = "0";
+		document.getElementsByClassName("list_sign")[0].style.opacity = "0";
 		
 		let stop_click = setTimeout(stopClicked, 50);
 		

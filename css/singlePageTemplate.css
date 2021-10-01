@@ -131,7 +131,15 @@ input[type="checkbox"]:checked + span {
 	left: 10px;
 	top: 10px;
 	opacity: 0;
-	transition: all 0.2s;
+	transition: all 0.1s;
+}
+
+.list_sign{
+	position: absolute;
+	left: 1108px;
+	top: 598px;
+	opacity: 0;
+	transition: all 0.1s;
 }
 
 .list_bg {
