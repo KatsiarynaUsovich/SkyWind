@@ -174,10 +174,14 @@ body {
 		document.getElementsByClassName("list_content")[0].style.top = "611px";
 		document.getElementsByClassName("list_content")[0].style.maxHeight = "0px";
 		
-		let list_hide = setTimeout(hide, 1500);
+		var auto_top = document.getElementsByClassName("list_content")[0].style.top;
+		
+		let list_hide = setTimeout(hide, 1400);
 		
 		function hide() {
+			
 			 document.getElementsByClassName("list_content")[0].style.pointerEvents = "auto";
+			
 		}
 
 	}
@@ -382,6 +386,8 @@ body {
 	
 			
 		function autoHover() {
+			
+		document.getElementsByClassName("list_content")[0].style.pointerEvents = "auto";
 						
 		document.getElementById("auto_btn").src = "images/btn_auto_hov.png";
 		document.getElementsByClassName("list_bg")[0].style.top = "424px";
