@@ -64,7 +64,7 @@ label {
 	position: absolute;
 	left: 1222px;
 	top: 524px;
-	z-index: 1;
+	z-index: 10;
 }
 
 .spin_image{
@@ -124,6 +124,8 @@ input[type="checkbox"]:checked + span {
 	visibility: hidden;
 	left: 1095px;
 	top: 585px;
+	max-width: 136px;
+	overflow: hidden;
 }
 
 #spin_count {
